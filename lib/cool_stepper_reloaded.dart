@@ -54,10 +54,10 @@ class CoolStepper extends StatefulWidget {
   });
 
   @override
-  _CoolStepperState createState() => _CoolStepperState();
+  CoolStepperState createState() => CoolStepperState();
 }
 
-class _CoolStepperState extends State<CoolStepper> {
+class CoolStepperState extends State<CoolStepper> {
   final PageController _controller = PageController();
 
   int currentStep = 0;
@@ -68,8 +68,8 @@ class _CoolStepperState extends State<CoolStepper> {
     super.dispose();
   }
 
-  Future<void>? switchToPage(int page) {
-    _controller.animateToPage(
+  Future<void> switchToPage(int page) {
+    return _controller.animateToPage(
       page,
       duration: const Duration(milliseconds: 300),
       curve: Curves.ease,
@@ -80,7 +80,7 @@ class _CoolStepperState extends State<CoolStepper> {
 
   bool _isLast(int index) => (widget.steps.length - 1 == index);
 
-  final _doNothing = () => {};
+  void _doNothing() => {};
   void onStepNext() {
     final validation = widget.steps[currentStep].validation;
 
@@ -155,9 +155,7 @@ class _CoolStepperState extends State<CoolStepper> {
       ),
     );
 
-    String _getFinishLabel() {
-      return widget.config.finalText;
-    }
+    String _getFinishLabel() => widget.config.finalText;
 
     String _getNextLabel() {
       String nextLabel;

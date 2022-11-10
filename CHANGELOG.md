@@ -1,3 +1,6 @@
+## [3.2.6] - 10/11/2022
+ - Fix analysis
+ 
 ## [3.2.5] - 04/08/2021
  - Move [color] from [step] to [config]
  - Renamed [color] to [stepColor]

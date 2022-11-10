@@ -1,5 +1,4 @@
 import 'package:cool_stepper_reloaded/cool_stepper_reloaded.dart';
-import 'package:cool_stepper_reloaded/src/models/cool_step.dart';
 import 'package:cool_stepper_reloaded/src/rounded_corner_container/rounded_corner_container.dart';
 import 'package:flutter/material.dart';
 
