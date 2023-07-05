@@ -71,10 +71,7 @@ class CoolStepperView extends StatelessWidget {
     /// [body] is always show, this will contain the [step] content
     Widget body = Align(
       alignment: step.alignment,
-      child: SingleChildScrollView(
-        padding: contentPadding,
-        child: step.content,
-      ),
+      child: step.scrollingContent ? SingleChildScrollView(padding: contentPadding,child: step.content,) : Container(padding: contentPadding,child: step.content,),
     );
 
     if (hasRoundedCorner) {
