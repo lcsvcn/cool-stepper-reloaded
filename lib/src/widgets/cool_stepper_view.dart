@@ -47,12 +47,15 @@ class CoolStepperView extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: Text(
-                  step.title.toUpperCase(),
-                  style: config.titleTextStyle,
-                  maxLines: 2,
+              Expanded(
+                flex: 1,
+                child: Container(
+                  // width: MediaQuery.of(context).size.width * 0.8,
+                  child: Text(
+                    step.title.toUpperCase(),
+                    style: config.titleTextStyle,
+                    maxLines: 2,
+                  ),
                 ),
               ),
               SizedBox(width: 5.0),
@@ -71,10 +74,7 @@ class CoolStepperView extends StatelessWidget {
     /// [body] is always show, this will contain the [step] content
     Widget body = Align(
       alignment: step.alignment,
-      child: SingleChildScrollView(
-        padding: contentPadding,
-        child: step.content,
-      ),
+      child: step.scrollingContent ? SingleChildScrollView(padding: contentPadding,child: step.content,) : Container(padding: contentPadding,child: step.content,),
     );
 
     if (hasRoundedCorner) {

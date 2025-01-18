@@ -29,6 +29,11 @@ class CoolStep {
   /// [default] is [Alignment.topCenter]
   final Alignment alignment;
 
+  /// [scrollingContent] if set to true, this will wrap the step contents inside a SingleChildScrollView widget, allowing the contents to scroll vertically
+  ///
+  /// [default] is [true]
+  final bool scrollingContent;
+
   static String? _noValidation() => null;
 
   CoolStep({
@@ -37,5 +42,6 @@ class CoolStep {
     this.title = '',
     this.subtitle = '',
     this.alignment = Alignment.topCenter,
+    this.scrollingContent = true,
   });
 }
